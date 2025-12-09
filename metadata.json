@@ -1,0 +1,7 @@
+{
+  "name": "Gemini Health Guard",
+  "description": "A real-time medical dashboard with live vitals monitoring and multimodal AI analysis using Gemini.",
+  "requestFramePermissions": [
+    "microphone"
+  ]
+}

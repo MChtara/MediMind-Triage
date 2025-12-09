@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MediMind 2030</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+      /* Base Resets */
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: 'Inter', sans-serif;
+        background: #020617; /* Fallback */
+        color: #e2e8f0;
+        overflow-x: hidden;
+      }
+
+      /* Animated Deep Mesh Gradient Background */
+      .bg-sci-fi {
+        background: linear-gradient(-45deg, #020617, #1e1b4b, #115e59, #312e81);
+        background-size: 400% 400%;
+        animation: gradientBG 15s ease infinite;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+      }
+
+      @keyframes gradientBG {
+        0% { background-position: 0% 50%; }
+        50% { background-position: 100% 50%; }
+        100% { background-position: 0% 50%; }
+      }
+
+      /* High-Fidelity Glassmorphism */
+      .glass-sci-fi {
+        background: rgba(255, 255, 255, 0.03);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-top: 1px solid rgba(255, 255, 255, 0.15);
+        box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+        border-radius: 24px;
+      }
+
+      /* Neon Text Glow */
+      .text-glow {
+        text-shadow: 0 0 10px rgba(6, 182, 212, 0.5);
+      }
+      
+      .text-glow-purple {
+        text-shadow: 0 0 10px rgba(168, 85, 247, 0.5);
+      }
+
+      /* Neon Button */
+      .btn-neon {
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        position: relative;
+        overflow: hidden;
+      }
+      
+      .btn-neon:hover:not(:disabled) {
+        box-shadow: 0 0 20px #06b6d4;
+        transform: scale(1.02);
+        border-color: rgba(6, 182, 212, 0.8);
+      }
+
+      .btn-neon:active:not(:disabled) {
+        transform: scale(0.98);
+      }
+
+      /* Entrance Animation */
+      .animate-fade-up {
+        animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        opacity: 0;
+        transform: translateY(20px);
+      }
+
+      @keyframes fadeInUp {
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      /* Custom Scrollbar for Sci-Fi look */
+      ::-webkit-scrollbar {
+        width: 6px;
+        height: 6px;
+      }
+      ::-webkit-scrollbar-track {
+        background: rgba(0,0,0,0.1); 
+      }
+      ::-webkit-scrollbar-thumb {
+        background: rgba(6, 182, 212, 0.3); 
+        border-radius: 10px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: rgba(6, 182, 212, 0.6); 
+      }
+
+      /* ECG Animation */
+      .ecg-svg {
+        fill: none;
+        stroke: #ef4444;
+        stroke-width: 2;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        filter: drop-shadow(0 0 4px rgba(239, 68, 68, 0.6));
+      }
+      
+      .ecg-line {
+        stroke-dasharray: 500;
+        stroke-dashoffset: 500;
+        animation: drawECG 2s linear infinite;
+      }
+
+      @keyframes drawECG {
+        0% { stroke-dashoffset: 500; }
+        100% { stroke-dashoffset: 0; }
+      }
+      
+      .font-mono {
+        font-family: 'JetBrains Mono', monospace;
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.1/",
+    "recharts": "https://aistudiocdn.com/recharts@^3.5.1",
+    "react/": "https://aistudiocdn.com/react@^19.2.1/",
+    "react": "https://aistudiocdn.com/react@^19.2.1",
+    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.31.0"
+  }
+}
+</script>
+</head>
+  <body>
+    <div class="bg-sci-fi"></div>
+    <div id="root" class="relative z-10"></div>
+  </body>
+</html>
